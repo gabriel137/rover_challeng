@@ -30,6 +30,26 @@ To run the application using Docker, follow these steps:
     docker run -it --rm rover_app_image
 ```
 
+3. You should see output in the terminal like
+
+```
+    Enter 'file' to read data from a file, or press Enter to enter data manually: file
+```
+
+4. Write file and press enter
+
+5. You should see output in the terminal like
+
+```
+    Enter the name of the input file:
+```
+
+6. write the path
+
+```
+    ./assets/static/input.txt
+```
+
 ## Usage
 
 There are two ways to run the application: manually or from an input file.
@@ -83,7 +103,7 @@ For Example:
 
 
 ```
-    python app/main.py file
+    python app/main.py
 ```
 
 Choose "file" in options and write your input file name (e.g., your-file.txt). An example input.txt is provided in the app/ folder for your convenience.
