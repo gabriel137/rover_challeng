@@ -23,10 +23,17 @@ class Rover:
         self.coordinate = coordinate
 
     def move(self):
-        directions = {'N': (0, 1), 'E': (1, 0), 'S': (0, -1), 'W': (-1, 0)}
-        dx, dy = directions[self.coordinate]
+        coordinate = {'N': (0, 1), 'E': (1, 0), 'S': (0, -1), 'W': (-1, 0)}
+        dx, dy = coordinate[self.coordinate]
         self.x += dx
         self.y += dy
+
+    def move_back(self):
+        coordinate = {'N': (0, 1), 'E': (1, 0), 'S': (0, -1), 'W': (-1, 0)}
+        dx, dy = coordinate[self.coordinate]
+        self.x -= dx  
+        self.y -= dy 
+
                 
     def turn_left(self):
         coordinate = ('N', 'E', 'S', 'W')

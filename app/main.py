@@ -1,5 +1,5 @@
 from models.command import process_command
-
+from utils.io_utils import read_input_from_file
 
 def main():
     """
@@ -42,18 +42,6 @@ def main():
     except Exception as e:
         print(f"Error: {e}")
 
-
-def read_input_from_file(filename):
-    with open(filename, 'r') as file:
-        lines = file.readlines()
-
-    try:
-        x_max, y_max = map(int, lines[0].split())
-        rover_pairs = [(lines[i], lines[i + 1]) for i in range(1, len(lines), 2)]
-    except (IndexError, ValueError) as e:
-        raise ValueError(e)
-
-    return x_max, y_max, rover_pairs
 
 if __name__ == "__main__":
     main()
