@@ -27,7 +27,7 @@ def process_command(x_max, y_max, rover_position, instructions):
 
     rover = Rover(x, y, direction)
 
-    if not rover.is_valid_coordinate(direction):
+    if not rover.is_valid_direction(direction):
         raise ValueError("The rover's initial heading is invalid.")
 
     for instruction in instructions:
@@ -39,7 +39,7 @@ def process_command(x_max, y_max, rover_position, instructions):
             elif instruction == 'M':
                 rover.move()
                 if not is_valid_position(rover.x, rover.y, x_max, y_max):
-                    rover.move_back()  # Move the rover back if it tries to move out of bounds
+                    rover.move_back()
         except ValueError:
             raise ValueError(f"Invalid statement, check the character: '{instruction}'")
 

@@ -45,5 +45,5 @@ class Rover:
 
     
 
-    def is_valid_coordinate(self, direction):
+    def is_valid_direction(self, direction):
         return direction in ['N', 'E', 'S', 'W']

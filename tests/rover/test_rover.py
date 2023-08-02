@@ -19,7 +19,7 @@ def test_turn_left():
     """
     rover = Rover(0, 0, 'N')
     rover.turn_left()
-    assert rover.coordinate == 'W'
+    assert rover.direction == 'W'
 
 def test_turn_right():
     """
@@ -36,7 +36,7 @@ def test_turn_right():
     """
     rover = Rover(0, 0, 'N')
     rover.turn_right()
-    assert rover.coordinate == 'E'
+    assert rover.direction == 'E'
 
 @pytest.mark.parametrize("initial_x, initial_y, initial_direction, expected_x, expected_y", [
     (0, 0, 'N', 0, 1),
@@ -63,12 +63,12 @@ def test_move(initial_x, initial_y, initial_direction, expected_x, expected_y):
     assert rover.x == expected_x
     assert rover.y == expected_y
 
-def test_is_valid_coordinate():
+def test_is_valid_direction():
     """
-    Test the `is_valid_coordinate` method of the `Rover` class.
+    Test the `is_valid_direction` method of the `Rover` class.
 
     This function creates a `Rover` object at coordinate (0, 0) with a facing direction of 'N'.
-    It then asserts that the `is_valid_coordinate` method returns True for the directions 'N', 'E',
+    It then asserts that the `is_valid_direction` method returns True for the directions 'N', 'E',
     'S', and 'W', and False for the direction 'X'.
 
     Parameters:
@@ -78,10 +78,10 @@ def test_is_valid_coordinate():
     - None
     """
     rover = Rover(0, 0, 'N')
-    assert rover.is_valid_coordinate('N')
-    assert rover.is_valid_coordinate('E')
-    assert rover.is_valid_coordinate('S')
-    assert rover.is_valid_coordinate('W')
-    assert not rover.is_valid_coordinate('X')
+    assert rover.is_valid_direction('N')
+    assert rover.is_valid_direction('E')
+    assert rover.is_valid_direction('S')
+    assert rover.is_valid_direction('W')
+    assert not rover.is_valid_direction('X')
 
 
