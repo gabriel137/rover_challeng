@@ -1,4 +1,4 @@
-from m odels.command import process_command
+from models.command import process_command
 
 
 def main():
