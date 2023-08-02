@@ -11,23 +11,23 @@ Download the source code of this project.
 Install the dependencies by running the following command in the project folder:
 
 ```
- pip install -r requirements.txt
+ pip3 install -r requirements.txt
 ```
 
-## Installation - Docker
+## Run - Docker
 
 To run the application using Docker, follow these steps:
 
 1. Build the Docker image:
 
 ```
-    docker build -t rover_app_image .
+docker build -t rover_app_image .
 ```
 
 2. Run the Docker container interactively:
 
 ```
-    docker run -it --rm rover_app_image
+docker run -it --rm rover_app_image
 ```
 
 3. You should see output in the terminal like
@@ -38,6 +38,10 @@ To run the application using Docker, follow these steps:
 
 4. Write file and press enter
 
+```
+file
+```
+
 5. You should see output in the terminal like
 
 ```
@@ -47,7 +51,7 @@ To run the application using Docker, follow these steps:
 6. write the path
 
 ```
-    ./assets/static/input.txt
+./assets/static/input.txt
 ```
 
 ## Usage
@@ -63,12 +67,32 @@ To run the application manually, follow the instructions below:
 2. Run the following command to start the application:
 
 ```
-    python app/main.py
+python3 app/main.py
 ```
 
-3. Follow the instructions in the terminal to provide the necessary information about the plateau and the rovers.
+3. You should see output in the terminal like
 
-4. After entering all the information, the results of the rovers' movements will be displayed in the terminal.
+```
+    Enter 'file' to read data from a file, or press Enter to enter data manually:
+```
+
+4. Write file and press enter
+
+```
+file
+```
+
+5. You should see output in the terminal like
+
+```
+    Enter the name of the input file:
+```
+
+6. write the path
+
+```
+./assets/static/input.txt
+```
 
 ### Execution from an Input File:
 
@@ -95,23 +119,10 @@ For Example:
     MMRMMRMRRM
 ```
 
-2. Save the file with the name "input.txt" in the project folder /assets/static/input.txt.
-
-3. Open a terminal or command prompt in the project folder.
-
-4. Run the following command to start the application from the input file:
-
-
-```
-    python app/main.py
-```
-
-Choose "file" in options and write your input file name (e.g., your-file.txt). An example input.txt is provided in the app/ folder for your convenience.
-
 # Running Tests
 
 - To run the automated tests, execute the following command in the project folder:
 
 ```
-    pytest
+pytest
 ```

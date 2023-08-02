@@ -3,33 +3,31 @@ from .rover import Rover
 
 def process_command(x_max, y_max, rover_position, instructions):
     """
-    Processes the instructions to control the robotic rover on the Cartesian plane.
+    Process the given command to move a rover on a plateau.
 
-    Args:
-        x_max (int): Maximum x-coordinate of the plateau on Mars.
-        y_max (int): Maximum y-coordinate of the plateau on Mars.
-        rover_position (str): Initial position of the rover in the format "x y coordinate".
-        instructions (str): Sequence of instructions (L, R, and M) for the rover to follow.
+    Parameters:
+        x_max (int): The maximum x-coordinate of the plateau.
+        y_max (int): The maximum y-coordinate of the plateau.
+        rover_position (str): The initial position of the rover (format: "x y direction").
+        instructions (str): The instructions for the rover to execute.
 
     Returns:
-        str: Final coordinates and direction of the rover after following the provided instructions.
+        str: The final position of the rover after executing the instructions.
 
     Raises:
-        ValueError: If the rover's coordinates are outside the limits of the plateau or when the initial direction
-                    of the rover is invalid.
-        ValueError: If an invalid instruction is found in the provided instructions.
+        ValueError: If the rover's initial heading is invalid or if an invalid instruction is encountered.
     """
 
-    x, y, coordinate = rover_position.split()
+    x, y, direction = rover_position.split()
     x = int(x)
     y = int(y)
 
     if not is_valid_position(x, y, x_max, y_max):
         return "The rover left the plateau boundaries while executing the instructions."
 
-    rover = Rover(x, y, coordinate)
+    rover = Rover(x, y, direction)
 
-    if not rover.is_valid_coordinate(coordinate):
+    if not rover.is_valid_coordinate(direction):
         raise ValueError("The rover's initial heading is invalid.")
 
     for instruction in instructions:
@@ -45,7 +43,7 @@ def process_command(x_max, y_max, rover_position, instructions):
         except ValueError:
             raise ValueError(f"Invalid statement, check the character: '{instruction}'")
 
-    return f"{rover.x} {rover.y} {rover.coordinate}"
+    return f"{rover.x} {rover.y} {rover.direction}"
 
 
 def is_valid_position(x, y, x_max, y_max):
