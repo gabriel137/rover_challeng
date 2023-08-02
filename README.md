@@ -10,13 +10,13 @@ Download the source code of this project.
 
 Install the dependencies by running the following command in the project folder:
 
-pip install -r requirements.txt
+- pip install -r requirements.txt
 
 # Usage
 There are two ways to run the application: manually or from an input file.
 
 # Manual Execution:
-To run the application manually, follow the instructions below:
+## To run the application manually, follow the instructions below:
 
 To run the application manually, follow the instructions below:
 
@@ -24,8 +24,7 @@ Open a terminal or command prompt in the project folder.
 
 Run the following command to start the application:
 
-
-python app/main.py
+- python app/main.py
 
 Follow the instructions in the terminal to provide the necessary information about the plateau and the rovers.
 
