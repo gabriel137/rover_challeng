@@ -152,7 +152,6 @@ def test_process_command_collision():
     """
     x_max, y_max = 5, 5
 
-    # Test collision
     rover1_position = "2 3 N"
     rover1_instructions = "M"
 
@@ -185,16 +184,13 @@ def test_process_command_sequential_movement():
     """
     x_max, y_max = 5, 5
 
-    # Rover 1
     rover_position_1 = "1 2 N"
     instructions_1 = "LMLMLMLMM"
     result_1 = process_command(x_max, y_max, rover_position_1, instructions_1)
 
-    # Rover 2
     rover_position_2 = "3 3 E"
     instructions_2 = "MMRMMRMRRM"
     result_2 = process_command(x_max, y_max, rover_position_2, instructions_2)
 
-    # Check if the second rover starts moving after the first one has finished
     assert result_1 == "1 3 N"
     assert result_2 == "5 1 E"

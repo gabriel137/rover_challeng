@@ -61,7 +61,3 @@ def is_valid_position(x, y, x_max, y_max):
     """
 
     return 0 <= x <= x_max and 0 <= y <= y_max
-
-    # if not (0 <= x <= x_max and 0 <= y <= y_max):
-    #     raise ValueError("The rover left the limits of the plateau.")
-    # return True
